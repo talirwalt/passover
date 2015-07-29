@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  product_description: MyText
+  price: 9.99
+  is_gebrochts: 
+  image_src: MyString
+  course_id: 
+  line_item_id: 
+
+two:
+  product_name: MyString
+  product_description: MyText
+  price: 9.99
+  is_gebrochts: 
+  image_src: MyString
+  course_id: 
+  line_item_id: 
