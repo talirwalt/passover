@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => User %></h1>
+</div>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:password) %></dt>
+      <dd><pre class="prettyprint"><%= @user.password %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:password_confirmation) %></dt>
+      <dd><pre class="prettyprint"><%= @user.password_confirmation %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:f_name) %></dt>
+      <dd><pre class="prettyprint"><%= @user.f_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:l_name) %></dt>
+      <dd><pre class="prettyprint"><%= @user.l_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email) %></dt>
+      <dd><pre class="prettyprint"><%= @user.email %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Password confirmation:</strong>
-  <%= @user.password_confirmation %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              users_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_path(@user), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_path(@user),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>F name:</strong>
-  <%= @user.f_name %>
-</p>
-
-<p>
-  <strong>L name:</strong>
-  <%= @user.l_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
